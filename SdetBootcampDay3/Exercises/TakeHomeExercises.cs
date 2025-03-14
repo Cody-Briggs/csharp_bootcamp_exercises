@@ -13,7 +13,7 @@ namespace SdetBootcampDay3.Exercises
          * TODO: First, have a look at the API docs here: https://reqres.in
          */
 
-        private const string BASE_URL = "https://reqres.in";
+        private const string API_ENDPOINT_BASE = "https://reqres.in";
 
         private RestClient client;
 
@@ -21,7 +21,7 @@ namespace SdetBootcampDay3.Exercises
         [OneTimeSetUp]
         public void EstablishRESTHandler()
         {
-            client = new RestClient(BASE_URL);
+            client = new RestClient(API_ENDPOINT_BASE);
         }
         //Step 1
         [Test]
