@@ -1,0 +1,26 @@
+name: SDET Bootcamp pipeline
+
+on:
+  push:
+    branches:
+        -main
+  pull_Request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+
+jobs:
+  build:
+
+    runs-on: Ubuntu-Latest
+    strategy:
+      matrix:
+        dotnet-version: [8.0.x]
+        include:
+          - dontnet-version: 8.0.x
+            framework: net8.0
+
+    steps:
+      - uses: actions/checkout@v3
