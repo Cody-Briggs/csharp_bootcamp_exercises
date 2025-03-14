@@ -39,7 +39,7 @@ jobs:
 
       - name: Build the project
         working-directory: ./SdetBootcampDay1
-        run: dotnet-build --framework ${{ matrix.framework }} --no-restore
+        run: dotnet build --framework ${{ matrix.framework }} --no-restore
 
       - name: Run Day 1 Tests
         working-directory: ./SdetBootcampDay1
