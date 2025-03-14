@@ -3,7 +3,7 @@ name: SDET Bootcamp pipeline
 on:
   push:
     branches:
-        -main
+        - main
   pull_Request:
 
 concurrency:
