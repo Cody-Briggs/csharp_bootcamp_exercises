@@ -34,13 +34,13 @@ jobs:
         run: dotnet --list-sdks
 
       - name: Restore Project Dependencies
-        working-directory: ./charpcsharp_bootcamp_exercises/SdetBootcampDay1
+        working-directory: ./csharp_bootcamp_exercises/SdetBootcampDay1
         run: dotnet restore -p:TargetFramework=${{ matrix.framework }}
 
       - name: Build the project
-        working-directory: ./charpcsharp_bootcamp_exercises/SdetBootcampDay1
+        working-directory: ./csharp_bootcamp_exercises/SdetBootcampDay1
         run: dotnet-build --framework ${{ matrix.framework }} --no-restore
 
       - name: Run Day 1 Tests
-        working-directory: ./charpcsharp_bootcamp_exercises/SdetBootcampDay1
+        working-directory: ./csharp_bootcamp_exercises/SdetBootcampDay1
         run: dotnet test --framework ${{ matrix.framework }} --no-restore --no-build --verbosity normal --filter Name~Exercises
